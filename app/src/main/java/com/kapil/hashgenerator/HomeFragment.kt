@@ -5,6 +5,7 @@ import android.view.*
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.kapil.hashgenerator.databinding.FragmentHomeBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -68,6 +69,12 @@ class HomeFragment : Fragment() {
         delay(300)
         binding.successImageView.animate().alpha(1f).duration=1200L
 
+        delay(1500L)
+        navigateToSuccess()
+
+    }
+    private fun navigateToSuccess(){
+        findNavController().navigate(R.id.action_homeFragment_to_successFragment)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
